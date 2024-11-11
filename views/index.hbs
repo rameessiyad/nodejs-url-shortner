@@ -20,28 +20,38 @@
       <h1 class="text-center my-4">URL Shortener</h1>
       <form action="/shortUrls" method="POST" class="mb-4">
         <div class="input-group">
-            <input type="text" name="fullUrl" class="form-control" placeholder="Enter URL" required>
-            <div class="input-group-append">
-                <button class="btn btn-success">Shorten</button>
-            </div>
+          <input
+            type="text"
+            name="fullUrl"
+            class="form-control"
+            placeholder="Enter URL"
+            required
+          />
+          <div class="input-group-append">
+            <button class="btn btn-success">Shorten</button>
+          </div>
         </div>
       </form>
 
       <table class="table table-stripped table-bordered">
         <thead class="thead-dark">
-            <tr>
-                <th>Full URL</th>
-                <th>Short URL</th>
-                <th>Clicks</th>
-            </tr>
+          <tr>
+            <th>Full URL</th>
+            <th>Short URL</th>
+            <th>Clicks</th>
+          </tr>
         </thead>
         <tbody>
-            {{#each shorUrls}}
+          {{#each shorUrls}}
             <tr>
-                <td><a href="{{this.full}}" target="_blank">{{this.full}}</a></td>
-                <td><a href="{{this.short}}" target="_blank">{{this.short}}</a></td>
-                <td>{{this.clicks}}</td>
+              <td><a href="{{this.full}}" target="_blank">{{this.full}}</a></td>
+              <td><a
+                  href="{{this.short}}"
+                  target="_blank"
+                >{{this.short}}</a></td>
+              <td>{{this.clicks}}</td>
             </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
