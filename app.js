@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const shortUrl = require("./models/shortUrl");
 
 //db connection
 mongoose
@@ -9,5 +10,13 @@ mongoose
 
 const PORT = 3000;
 const app = express();
+
+app.set("view engine", "hbs");
+app.use(express.urlencoded({ extended: true }));
+
+app.get("/", async (req, res) => {
+  const shortUrls = await shortUrl.find();
+  res.render("index", { shortUrls });
+});
 
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
