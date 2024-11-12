@@ -27,9 +27,7 @@
             placeholder="Enter URL"
             required
           />
-          <div class="input-group-append">
-            <button class="btn btn-success">Shorten</button>
-          </div>
+          <button class="btn btn-success" type="submit" >Shorten</button>
         </div>
       </form>
 
@@ -42,7 +40,7 @@
           </tr>
         </thead>
         <tbody>
-          {{#each shorUrls}}
+          {{#each shortUrls}}
             <tr>
               <td><a href="{{this.full}}" target="_blank">{{this.full}}</a></td>
               <td><a
